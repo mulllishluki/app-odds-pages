@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯赔率 · 轻量导航 | 日常查询与对照</title>
+  <style>
+    /* 极简留白 · 窄正文 · 清晰标题层级 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #faf9f7;
+      color: #1f2a3a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 窄正文宽度 */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+
+    /* --- 顶部导航 --- */
+    nav {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid #e5e1db;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem 0;
+    }
+
+    .nav-brand {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 1.1rem;
+      color: #2c3a4b;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #54738c;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1f2a3a;
+      border-bottom-color: #a8b9c7;
+    }
+
+    /* --- 内容通用间距 --- */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: #1a2632;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin: 2rem 0 0.8rem 0;
+      letter-spacing: -0.01em;
+      color: #1f2a3a;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #2c3e50;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #33414f;
+    }
+
+    /* hero 区域微调 */
+    .hero {
+      padding: 0.8rem 0 2.2rem 0;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    /* 场景模块卡片样式 — 极简边框 + 留白 */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e7e3dd;
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .scene-card:hover {
+      border-color: #cbd5df;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .scene-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 常见说明 – 紧凑列表 */
+    .faq-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #edebe7;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #1f2a3a;
+    }
+
+    .faq-a {
+      color: #506277;
+      font-size: 0.95rem;
+    }
+
+    /* 页脚 */
+    footer {
+      border-top: 1px solid #e5e1db;
+      padding: 2.2rem 0 3.2rem 0;
+      font-size: 0.9rem;
+      color: #687b8d;
+    }
+
+    footer a {
+      color: #3f5b73;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    footer a:hover {
+      color: #1f2a3a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .scene-card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    /* 行内链接色 – 日常嵌入感 */
+    .inline-link {
+      color: #2c6180;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b8cadb;
+      transition: text-decoration-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #1a3a4f;
+      text-decoration-color: #5c7f9a;
+    }
+
+    /* 引用感小字 */
+    .meta-note {
+      font-size: 0.9rem;
+      color: #6b7f91;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+      <span class="nav-brand">赔率笔记</span>
+      <div class="nav-links">
+        <a href="#daily">日常查询</a>
+        <a href="#scenes">常见场景</a>
+        <a href="#faq">说明</a>
+      </div>
+    </nav>
+
+    <!-- hero 介绍 -->
+    <section class="hero">
+      <h1>世界杯赔率<br>从日常查询到对照参考</h1>
+      <p>看球聊球时，赔率常常作为话题背景出现。无论是赛前快速浏览，还是赛后对照复盘，一个清晰的数据页面能让信息获取更自然。下面从几个生活化角度聊聊怎么使用 <a href="https://app-odds-worldcup.com" class="inline-link">世界杯赔率</a> 这个工具。</p>
+    </section>
+
+    <!-- 核心介绍 + 轻量特点 -->
+    <section>
+      <h2>不只是数字，也是赛前语境</h2>
+      <p>世界杯期间，很多人打开赔率页面不是为了下注，而是想了解外界对某场比赛的预期走向。一组赔率背后包含了球队状态、历史交锋、阵容变化等综合信息。单纯看数字可能觉得枯燥，但结合赛程和球队近况，这些数字就成了另一种“赛前简报”。</p>
+      <p>网站首页直接呈现了各场次赔率，没有多余弹窗或复杂注册流程。打开就能横向对比不同公司给出的数值差异，这种透明度对于只想快速了解盘面的人来说很友好。</p>
+      <p style="margin-top: 1.2rem;"><strong>三个比较实用的特点：</strong> 赛程与赔率并列展示、多家数据并排对照、页面加载后无需登录即可浏览。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+      <h2>三个日常使用场景</h2>
+      <div class="scene-grid">
+        <div class="scene-card">
+          <h3>📋 赛前快速对照</h3>
+          <p>朋友群里刚发来一场比赛的预测，你想看看主流平台的态度是否一致。打开页面，扫一眼各家公司开出的赔率，数值差异一目了然。不用注册，也不用关注无关信息，从打开到看完大概只需十几秒。</p>
+        </div>
+        <div class="scene-card">
+          <h3>📊 赛后延伸阅读</h3>
+          <p>比赛结束后，除了比分，有时也会好奇赛前外界更看好哪一方。翻回当时的赔率页面，结合比赛进程复盘，会发现一些有意思的对照：比如冷门场次赔率波动往往更剧烈，而强强对话的数值则相对稳定。</p>
+        </div>
+        <div class="scene-card">
+          <h3>📆 日常浏览与话题储备</h3>
+          <p>世界杯周期长，中间有很多休息日。闲下来时随便翻翻下一轮的赔率变化，可以作为和朋友聊球的谈资。比如某支球队的赔率突然调低，可能跟伤病名单或战术调整有关——这些背景信息在 <a href="https://app-odds-worldcup.com" class="inline-link">世界杯赔率</a> 页面里都能找到数据支撑。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <div class="faq-q">为什么赔率会不断变化？</div>
+        <div class="faq-a">赔率受投注量、球队新闻、市场情绪等多重因素影响，属于动态数据。页面通常每隔一段时间刷新，反映的是当前阶段的市场共识。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">不同网站赔率不一样，以哪个为准？</div>
+        <div class="faq-a">没有绝对“标准”，不同平台因风险模型、用户结构差异导致数值略有不同。建议同时参考两到三家主流平台，了解大致区间即可。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">这个网站需要注册或付费吗？</div>
+        <div class="faq-a">不需要注册，页面直接展示赔率数据，无需登录即可浏览。不涉及任何付费功能或隐藏内容。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">可以只看某一场比赛的赔率吗？</div>
+        <div class="faq-a">页面按赛程列出所有场次，点击具体比赛行或切换选项卡（如果存在）即可聚焦单场数据。当前版本支持快速筛选。</div>
+      </div>
+    </section>
+
+    <!-- 页脚 + 自然链接再次出现 -->
+    <footer>
+      <p>日常查询与对照参考，页面数据仅供交流使用。关于赔率的更多背景和实时更新，欢迎直接访问 <a href="https://app-odds-worldcup.com">世界杯赔率</a> 页面。</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #8699ab;">— 基于信息透明与日常使用场景整理 · 版本 2025 · 内容持续迭代</p>
+    </footer>
+  </div>
+</body>
+</html>
